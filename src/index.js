@@ -1,7 +1,6 @@
 import express from 'express';
 import connectDB from './config/dbConfig.js';
-import postRouter from './routers/post.js';
-import userRouter from './routers/user.js';
+import apiRouter from './routers/apiRouter.js';
 
 const PORT = 3000;
 
@@ -11,9 +10,7 @@ app.use(express.json());
 app.use(express.text());
 app.use(express.urlencoded());
 
-app.use('/posts', postRouter); // Use the post router for all /posts routes
-
-app.use('/users', userRouter); // Use the user router for all /users routes
+app.use('/api/', apiRouter); // If the url starts with /api then the request is forwarded to the api router
 
 app.get('/ping', (req, res) => {
     console.log(req.query);
