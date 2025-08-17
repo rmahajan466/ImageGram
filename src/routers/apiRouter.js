@@ -1,14 +1,10 @@
 // this api router will be triggered when any request starts with /api
 import express from 'express';
-import postRouter from './post.js';
-import userRouter from './user.js';
+import v1Router from './v1/v1Router.js'; // Import the v1 router
+import v2Router from './v2/v2Router.js'; // Import the v2 router
 
 const router = express.Router();
 
-router.use('/posts', postRouter); // Use the post router for all /posts routes
+router.use('/v1', v1Router); // Use the v1 router for all /v1 routes
 
-router.use('/users', userRouter); // Use the user router for all /users routes
-
-export default router; // Export the api router to be used in index.js
-// This allows us to keep the routes organized and modular, making it easier to manage and scale
-// the application as it grows.
+export default router;
