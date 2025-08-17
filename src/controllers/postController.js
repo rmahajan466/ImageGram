@@ -15,3 +15,11 @@ export async function createPost(req, res) {
         data: post
     });
 }
+
+export async function getAllPosts(req, res) {
+    // return unimplemented response for now
+    return res.status(501).json({
+        success: false,
+        message: 'Not implemented yet'
+    });
+}
