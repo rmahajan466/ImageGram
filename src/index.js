@@ -1,10 +1,13 @@
 import express from 'express';
 import connectDB from './config/dbConfig.js';
 import apiRouter from './routers/apiRouter.js';
+import multer from 'multer';
 
 const PORT = 3000;
 
 const app = express(); // Create an express app server instance
+
+const upload = multer(); // Create a multer instance for handling multipart/form-data
 
 app.use(express.json());
 app.use(express.text());
